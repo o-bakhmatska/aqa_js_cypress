@@ -1,0 +1,23 @@
+{
+  "name": "js-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/o-bakhmatska/aqa_js_cypress#readme",
+  "bugs": {
+    "url": "https://github.com/o-bakhmatska/aqa_js_cypress/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/o-bakhmatska/aqa_js_cypress.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cypress": "^15.7.1"
+  }
+}
