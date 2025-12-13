@@ -11,6 +11,17 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
+
+Cypress.Commands.add('loginAsGuest', () => {
+  cy.visit('https://qauto.forstudy.space/', {
+    auth: {
+      username: 'guest',
+      password: 'welcome2qauto'
+    }
+  });
+});
+
+  
 //
 //
 // -- This is a child command --
