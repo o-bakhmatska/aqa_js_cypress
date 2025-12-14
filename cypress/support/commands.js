@@ -21,7 +21,49 @@ Cypress.Commands.add('loginAsGuest', () => {
   });
 });
 
-  
+import LoginModal from '../pages/loginModal';
+
+Cypress.Commands.add('loginAsRegisteredUser', (email, password) => {
+
+  cy.visit('https://qauto.forstudy.space/', {
+    auth: {
+      username: 'guest',
+      password: 'welcome2qauto'
+    }
+  });
+
+  LoginModal.open();
+  LoginModal.fillEmail('101test101@gmail.com'),
+  LoginModal.fillPassword('Password1'),
+  LoginModal.submit();
+  cy.get('.sidebar', { timeout: 10000 }).should('be.visible');
+  cy.url().should('include', '/garage');
+});
+
+Cypress.Commands.overwrite('type',(originalFn, subject, text, options = {}) => {
+    if (options.sensitive) {
+      return originalFn(subject, text, { ...options, log: false });
+    }
+    return originalFn(subject, text, options);
+  }
+);
+
+Cypress.Commands.add('loginUI', () => {
+  cy.visit('/', {
+    auth: {
+      username: Cypress.env('basicAuthUser'),
+      password: Cypress.env('basicAuthPassword')
+    }
+  });
+
+  LoginModal.open();
+  LoginModal.fillEmail(Cypress.env('userEmail'));
+  LoginModal.fillPassword(Cypress.env('userPassword'));
+  LoginModal.submit();
+
+  cy.get('.sidebar', { timeout: 10000 }).should('be.visible');
+});
+
 //
 //
 // -- This is a child command --

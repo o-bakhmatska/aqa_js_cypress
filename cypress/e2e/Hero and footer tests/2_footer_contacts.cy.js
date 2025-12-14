@@ -1,4 +1,4 @@
-import ContactsSection from '../pages/contactsSection';
+import ContactsSection from '../../pages/contactsSection';
 
 describe('Contacts and Footer Tests', () => {
   beforeEach(() => {
