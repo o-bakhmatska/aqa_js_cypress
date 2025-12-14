@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-12-14T18:44:41.052Z",
+    "end": "2025-12-14T18:44:43.813Z",
+    "duration": 2761,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "828ebf11-7a7b-4248-972f-4393d19d83d7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Hero and footer tests\\1_hero.cy.js",
+      "file": "cypress\\e2e\\Hero and footer tests\\1_hero.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fcf0430d-474f-4474-8fd8-88f66f2b935a",
+          "title": "Hero Section Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Button Sing Up should be visible",
+              "fullTitle": "Hero Section Tests Button Sing Up should be visible",
+              "timedOut": null,
+              "duration": 1338,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_heroSection.default.singUpButton.should('be.visible');",
+              "err": {},
+              "uuid": "21f2df29-e3c4-42da-b5f0-aab5c3a8b290",
+              "parentUUID": "fcf0430d-474f-4474-8fd8-88f66f2b935a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Sing Up button should be clickable",
+              "fullTitle": "Hero Section Tests Sing Up button should be clickable",
+              "timedOut": null,
+              "duration": 730,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_heroSection.default.clickSingUpButton();\ncy.contains('Sing Up').should('not.exist');",
+              "err": {},
+              "uuid": "00654544-5508-4f7e-b6f6-f1fcc34f42e2",
+              "parentUUID": "fcf0430d-474f-4474-8fd8-88f66f2b935a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Modal SingUp is opened by clicking on Sing Up button",
+              "fullTitle": "Hero Section Tests Modal SingUp is opened by clicking on Sing Up button",
+              "timedOut": null,
+              "duration": 551,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_heroSection.default.clickSingUpButton();\ncy.get('app-signup-modal').should('be.visible');\ncy.get('app-signup-modal').find('h4.modal-title').should('be.visible').and('have.text', 'Registration');",
+              "err": {},
+              "uuid": "d6c84af2-204f-4067-9ac2-b63a8963a41f",
+              "parentUUID": "fcf0430d-474f-4474-8fd8-88f66f2b935a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "21f2df29-e3c4-42da-b5f0-aab5c3a8b290",
+            "00654544-5508-4f7e-b6f6-f1fcc34f42e2",
+            "d6c84af2-204f-4067-9ac2-b63a8963a41f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2619,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/qauto",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

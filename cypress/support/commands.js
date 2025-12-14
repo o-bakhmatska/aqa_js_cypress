@@ -48,6 +48,22 @@ Cypress.Commands.overwrite('type',(originalFn, subject, text, options = {}) => {
   }
 );
 
+Cypress.Commands.add('loginUI', () => {
+  cy.visit('/', {
+    auth: {
+      username: Cypress.env('basicAuthUser'),
+      password: Cypress.env('basicAuthPassword')
+    }
+  });
+
+  LoginModal.open();
+  LoginModal.fillEmail(Cypress.env('userEmail'));
+  LoginModal.fillPassword(Cypress.env('userPassword'));
+  LoginModal.submit();
+
+  cy.get('.sidebar', { timeout: 10000 }).should('be.visible');
+});
+
 //
 //
 // -- This is a child command --
