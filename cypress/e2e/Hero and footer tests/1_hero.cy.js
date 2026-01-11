@@ -1,4 +1,4 @@
-import HeroSection from '../pages/heroSection';
+import HeroSection from '../../pages/heroSection';
 
 describe('Hero Section Tests', () => {
   beforeEach(() => {
