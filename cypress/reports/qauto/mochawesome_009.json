@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-12-14T19:03:53.700Z",
+    "end": "2025-12-14T19:04:03.739Z",
+    "duration": 10039,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "89fa7e2f-86db-44d3-b2f0-2afe1dac9024",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Garage\\garage.cy.js",
+      "file": "cypress\\e2e\\Garage\\garage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1ca5ff15-e0c8-4b8c-86f3-6afdc22cb7d8",
+          "title": "Garage and Fuel Expenses UI tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should add a car and add fuel expense",
+              "fullTitle": "Garage and Fuel Expenses UI tests Should add a car and add fuel expense",
+              "timedOut": null,
+              "duration": 10015,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Add car\n_garagePage.default.addCar({\n  brand: 'Audi',\n  model: 'A8',\n  mileage: '1'\n});\ncy.contains('Audi').should('be.visible');",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<button _ngcontent-wci-c85=\"\" class=\"btn btn-primary\">Add car</button>`\n\nis being covered by another element:\n\n`<ngb-modal-window role=\"dialog\" tabindex=\"-1\" aria-modal=\"true\" class=\"d-block modal fade show\">...</ngb-modal-window>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<button _ngcontent-wci-c85=\"\" class=\"btn btn-primary\">Add car</button>`\n\nis being covered by another element:\n\n`<ngb-modal-window role=\"dialog\" tabindex=\"-1\" aria-modal=\"true\" class=\"d-block modal fade show\">...</ngb-modal-window>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at ensureIsDescendent (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:114805:68)\n    at ensureDescendents (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:114856:5)\n    at ensureDescendentsAndScroll (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:114862:14)\n    at ensureElIsNotCovered (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:114993:5)\n    at runAllChecks (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:115192:52)\n    at retryActionability (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:115229:16)\n    at tryCatcher (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:151493:68)\n    at <unknown> (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:151434:14)\n    at tryCatcher (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "05abb548-9bbd-489c-8a86-5561de848184",
+              "parentUUID": "1ca5ff15-e0c8-4b8c-86f3-6afdc22cb7d8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "05abb548-9bbd-489c-8a86-5561de848184"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10015,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/qauto",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

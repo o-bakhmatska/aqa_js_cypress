@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-12-14T22:04:37.107Z",
+    "end": "2025-12-14T22:04:48.278Z",
+    "duration": 11171,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0ef118b7-b0d3-4c84-a691-f7314f062f93",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Garage\\garage_add_car_expenses.cy.js",
+      "file": "cypress\\e2e\\Garage\\garage_add_car_expenses.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bc710c57-e61e-4448-b3a7-8eba123a5189",
+          "title": "Garage and Fuel Expenses positive test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should add a car and add fuel expense to the created car",
+              "fullTitle": "Garage and Fuel Expenses positive test Should add a car and add fuel expense to the created car",
+              "timedOut": null,
+              "duration": 11120,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const carData = {\n  brand: 'Audi',\n  model: 'A8',\n  mileage: '1000'\n};\n_garagePage.default.addCar(carData);\n_garagePage.default.assertLastAddedCarIs({\n  brand: carData.brand,\n  model: carData.model\n});\n_garagePage.default.getLastAddedCar().then(car => {\n  _garagePage.default.getLastAddedCar().contains('Audi A8').should('be.visible');\n  _garagePage.default.getAddFuelExpenseButtonForCar(car).click();\n});\n_expensesModal.default.addExpense({\n  mileage: '1100',\n  liters: '20',\n  totalCost: '1200'\n});\ncy.get('table.expenses_table tbody tr').should('have.length', 1).first().within(() => {\n  cy.get('td').eq(1).should('contain.text', '1100');\n  cy.get('td').eq(2).should('contain.text', '20L');\n  cy.get('td').eq(3).should('contain.text', '1200');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected <app-add-expense-modal> not to exist in the DOM, but it was continuously found.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected <app-add-expense-modal> not to exist in the DOM, but it was continuously found.\n    at ExpensesModal.addExpense (webpack://js-cypress/./cypress/pages/expensesModal.js:41:15)\n    at Context.eval (webpack://js-cypress/./cypress/e2e/Garage/garage_add_car_expenses.cy.js:28:18)",
+                "diff": null
+              },
+              "uuid": "83238b04-78cb-42cf-9dcd-79d5ba5c211c",
+              "parentUUID": "bc710c57-e61e-4448-b3a7-8eba123a5189",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "83238b04-78cb-42cf-9dcd-79d5ba5c211c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11120,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/qauto2",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

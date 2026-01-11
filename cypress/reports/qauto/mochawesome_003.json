@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-12-14T18:44:44.991Z",
+    "end": "2025-12-14T18:44:51.464Z",
+    "duration": 6473,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ee5123fc-4d81-4742-93a2-78192ce83752",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Hero and footer tests\\2_footer_contacts.cy.js",
+      "file": "cypress\\e2e\\Hero and footer tests\\2_footer_contacts.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6c94ad12-c071-4bdf-8093-ef2dd86c2276",
+          "title": "Contacts and Footer Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Contacts section should be visible",
+              "fullTitle": "Contacts and Footer Tests Contacts section should be visible",
+              "timedOut": null,
+              "duration": 1560,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_contactsSection.default.root.should('be.visible');",
+              "err": {},
+              "uuid": "7997e867-b3d4-4e93-b8d3-e4c52427da32",
+              "parentUUID": "6c94ad12-c071-4bdf-8093-ef2dd86c2276",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should display Contacts title",
+              "fullTitle": "Contacts and Footer Tests Should display Contacts title",
+              "timedOut": null,
+              "duration": 686,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_contactsSection.default.title.should('be.visible');",
+              "err": {},
+              "uuid": "d8fbba3e-1a3d-4dfc-975e-f4525e4dcb58",
+              "parentUUID": "6c94ad12-c071-4bdf-8093-ef2dd86c2276",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should contain ithillel.ua link",
+              "fullTitle": "Contacts and Footer Tests Should contain ithillel.ua link",
+              "timedOut": null,
+              "duration": 437,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_contactsSection.default.hillelLink.should('be.visible').and('contain.text', 'ithillel.ua').and('have.attr', 'href', 'https://ithillel.ua');",
+              "err": {},
+              "uuid": "14c75285-d7b9-484b-8091-59d00d066731",
+              "parentUUID": "6c94ad12-c071-4bdf-8093-ef2dd86c2276",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should navigate to ithillel.ua when clicking link in footer",
+              "fullTitle": "Contacts and Footer Tests Should navigate to ithillel.ua when clicking link in footer",
+              "timedOut": null,
+              "duration": 3586,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_contactsSection.default.clickHillel();\ncy.url().should('include', 'ithillel.ua');",
+              "err": {},
+              "uuid": "b766f560-721d-4ed9-a7d6-886c6226d610",
+              "parentUUID": "6c94ad12-c071-4bdf-8093-ef2dd86c2276",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7997e867-b3d4-4e93-b8d3-e4c52427da32",
+            "d8fbba3e-1a3d-4dfc-975e-f4525e4dcb58",
+            "14c75285-d7b9-484b-8091-59d00d066731",
+            "b766f560-721d-4ed9-a7d6-886c6226d610"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6269,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/qauto",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

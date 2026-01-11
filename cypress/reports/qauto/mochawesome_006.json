@@ -1,0 +1,219 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-12-14T18:45:14.598Z",
+    "end": "2025-12-14T18:45:51.718Z",
+    "duration": 37120,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "200ffd81-efb9-4b6e-b96e-2d6204a92477",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Registration\\register_validation.cy.js",
+      "file": "cypress\\e2e\\Registration\\register_validation.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bd3e0302-430a-4c6c-9af5-991930122c45",
+          "title": "Registration popup validation tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should display Registration title",
+              "fullTitle": "Registration popup validation tests Should display Registration title",
+              "timedOut": null,
+              "duration": 1383,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_registrationModal.default.title.should('be.visible').and('have.text', 'Registration');",
+              "err": {},
+              "uuid": "68ad92f4-ce26-4bc3-bb2b-327795fbc5de",
+              "parentUUID": "bd3e0302-430a-4c6c-9af5-991930122c45",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate on required values for all fields",
+              "fullTitle": "Registration popup validation tests Validate on required values for all fields",
+              "timedOut": null,
+              "duration": 2216,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const requiredFields = [{\n  field: 'nameInput',\n  error: ERROR_MESSAGE.NAME_REQUIRED\n}, {\n  field: 'lastNameInput',\n  error: ERROR_MESSAGE.LAST_NAME_REQUIRED\n}, {\n  field: 'emailInput',\n  error: ERROR_MESSAGE.EMAIL_REQUIRED\n}, {\n  field: 'passwordInput',\n  error: ERROR_MESSAGE.PASSWORD_REQUIRED\n}, {\n  field: 'repeatPasswordInput',\n  error: ERROR_MESSAGE.RE_ENTER_PASSWORD_REQUIRED\n}];\nrequiredFields.forEach(({\n  field,\n  error\n}) => {\n  _registrationModal.default[field].click();\n  _registrationModal.default.title.click();\n  _registrationModal.default.error(error).should('be.visible');\n  _registrationModal.default[field].should('have.css', 'border-color', 'rgb(220, 53, 69)');\n});\n_registrationModal.default.registerButton.should('be.disabled');",
+              "err": {},
+              "uuid": "d51c717a-b338-4d00-bf8b-823c03972216",
+              "parentUUID": "bd3e0302-430a-4c6c-9af5-991930122c45",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate Name and Last name for invalid text",
+              "fullTitle": "Registration popup validation tests Validate Name and Last name for invalid text",
+              "timedOut": null,
+              "duration": 6720,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const fieldsWithSpaces = [{\n  input: 'nameInput',\n  invalidValues: ['Ok sa na', 'Оксана', 12345, 'ok-sa*na', '@123Qwe'],\n  valid: 'Ok',\n  error: ERROR_MESSAGE.INVALID_NAME\n}, {\n  input: 'lastNameInput',\n  invalidValues: ['Bak h ma tska', 'Бахмацька', 12345, 'ok-sa*na', '@123Qwe'],\n  valid: 'Ba',\n  error: ERROR_MESSAGE.INVALID_LAST_NAME\n}];\nfieldsWithSpaces.forEach(({\n  input,\n  invalidValues,\n  valid,\n  error\n}) => {\n  invalidValues.forEach(invalid => {\n    _registrationModal.default[input].clear().type(invalid);\n    _registrationModal.default.title.click();\n    _registrationModal.default.error(error).should('be.visible');\n    _registrationModal.default[input].should('have.css', 'border-color', 'rgb(220, 53, 69)');\n  });\n  _registrationModal.default[input].clear().type(valid);\n  _registrationModal.default.title.click();\n  _registrationModal.default.error(error).should('not.exist');\n  _registrationModal.default[input].should('have.css', 'border-color').and('not.eq', 'rgb(220, 53, 69)');\n});\n_registrationModal.default.registerButton.should('be.disabled');",
+              "err": {},
+              "uuid": "dd21263b-3f81-4146-9901-524d398b0da7",
+              "parentUUID": "bd3e0302-430a-4c6c-9af5-991930122c45",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate Name and Last Name length using boundary values and equivalence classes",
+              "fullTitle": "Registration popup validation tests Validate Name and Last Name length using boundary values and equivalence classes",
+              "timedOut": null,
+              "duration": 5720,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const fields = [{\n  input: 'nameInput',\n  error: ERROR_MESSAGE.NAME_ERROR\n}, {\n  input: 'lastNameInput',\n  error: ERROR_MESSAGE.LAST_NAME_ERROR\n}];\nconst testValues = [{\n  value: 'A',\n  valid: false\n}, {\n  value: 'Ab',\n  valid: true\n}, {\n  value: 'A'.repeat(20),\n  valid: true\n}, {\n  value: 'A'.repeat(21),\n  valid: false\n}];\nfields.forEach(({\n  input,\n  error\n}) => {\n  testValues.forEach(({\n    value,\n    valid\n  }) => {\n    _registrationModal.default[input].clear().type(value);\n    _registrationModal.default.title.click();\n    if (valid) {\n      _registrationModal.default.error(error).should('not.exist');\n      _registrationModal.default[input].should('have.css', 'border-color').and('not.eq', 'rgb(220, 53, 69)');\n    } else {\n      _registrationModal.default.error(error).should('be.visible');\n      _registrationModal.default[input].should('have.css', 'border-color', 'rgb(220, 53, 69)');\n    }\n  });\n});\n_registrationModal.default.registerButton.should('be.disabled');",
+              "err": {},
+              "uuid": "69988191-b81b-4a9a-b673-83d764348db7",
+              "parentUUID": "bd3e0302-430a-4c6c-9af5-991930122c45",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate all fields together",
+              "fullTitle": "Registration popup validation tests Validate all fields together",
+              "timedOut": null,
+              "duration": 6750,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const fields = [{\n  input: 'nameInput',\n  invalid: 'A',\n  valid: 'Anna',\n  error: ERROR_MESSAGE.NAME_ERROR\n}, {\n  input: 'lastNameInput',\n  invalid: 'B',\n  valid: 'Berner',\n  error: ERROR_MESSAGE.LAST_NAME_ERROR\n}, {\n  input: 'emailInput',\n  invalid: 'test@@mail.com',\n  valid: 'valid.email@test.com',\n  error: ERROR_MESSAGE.INCORRECT_EMAIL\n}, {\n  input: 'passwordInput',\n  invalid: 'password',\n  valid: 'Password1',\n  error: ERROR_MESSAGE.PASSWORD_ERROR\n}, {\n  input: 'repeatPasswordInput',\n  invalid: 'Password2',\n  valid: 'Password1',\n  error: ERROR_MESSAGE.PASSWORD_DO_NOT_MATCH\n}];\nfields.forEach(({\n  input,\n  invalid,\n  valid,\n  error\n}) => {\n  _registrationModal.default[input].clear().type(invalid);\n  _registrationModal.default.title.click();\n  _registrationModal.default.error(error).should('be.visible');\n  _registrationModal.default[input].should('have.css', 'border-color', 'rgb(220, 53, 69)');\n  _registrationModal.default[input].clear().type(valid);\n  _registrationModal.default.title.click();\n  _registrationModal.default.error(error).should('not.exist');\n  _registrationModal.default[input].should('have.css', 'border-color').and('not.eq', 'rgb(220, 53, 69)');\n});\n_registrationModal.default.registerButton.should('be.enabled');",
+              "err": {},
+              "uuid": "1ea4e68b-8b2a-44fe-afc4-fec7ee727a47",
+              "parentUUID": "bd3e0302-430a-4c6c-9af5-991930122c45",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate email filed for multiple invalid email formats",
+              "fullTitle": "Registration popup validation tests Validate email filed for multiple invalid email formats",
+              "timedOut": null,
+              "duration": 5391,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const invalidEmails = ['test@@mail.com', 'test@mail..com', 'test@ma!l.com', 'test@mail', 'test.mail.com', 'test@.com', 'test@com.', 'wrong-email'];\ninvalidEmails.forEach(email => {\n  _registrationModal.default.emailInput.clear().type(email);\n  _registrationModal.default.title.click();\n  _registrationModal.default.error(ERROR_MESSAGE.INCORRECT_EMAIL).should('be.visible');\n  _registrationModal.default.emailInput.should('have.css', 'border-color', 'rgb(220, 53, 69)');\n  _registrationModal.default.registerButton.should('be.disabled');\n});",
+              "err": {},
+              "uuid": "6ba477f6-484b-4c93-9c54-28b5b28529e5",
+              "parentUUID": "bd3e0302-430a-4c6c-9af5-991930122c45",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate password field for multiple invalid password formats",
+              "fullTitle": "Registration popup validation tests Validate password field for multiple invalid password formats",
+              "timedOut": null,
+              "duration": 5439,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const invalidPasswords = ['short1A',\n// < 8 characters\n'alllowercase1',\n// no capital letter\n'ALLUPPERCASE1',\n// no small letter\n'NoNumberPass',\n// no digit\n'password',\n// no digit, no capital\n'PASSWORD1',\n// no small letter\n'Pass1',\n// too short\n'VeryLongPassword123' // > 15 characters\n];\ninvalidPasswords.forEach(password => {\n  _registrationModal.default.passwordInput.clear().type(password);\n  _registrationModal.default.title.click();\n  _registrationModal.default.error(ERROR_MESSAGE.PASSWORD_ERROR).should('be.visible');\n  _registrationModal.default.passwordInput.should('have.css', 'border-color', 'rgb(220, 53, 69)');\n  _registrationModal.default.registerButton.should('be.disabled');\n});",
+              "err": {},
+              "uuid": "56db27f6-b978-4ea1-8f5f-d5449450c8f6",
+              "parentUUID": "bd3e0302-430a-4c6c-9af5-991930122c45",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "68ad92f4-ce26-4bc3-bb2b-327795fbc5de",
+            "d51c717a-b338-4d00-bf8b-823c03972216",
+            "dd21263b-3f81-4146-9901-524d398b0da7",
+            "69988191-b81b-4a9a-b673-83d764348db7",
+            "1ea4e68b-8b2a-44fe-afc4-fec7ee727a47",
+            "6ba477f6-484b-4c93-9c54-28b5b28529e5",
+            "56db27f6-b978-4ea1-8f5f-d5449450c8f6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 33619,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/qauto",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-12-14T18:44:25.643Z",
+    "end": "2025-12-14T18:44:35.148Z",
+    "duration": 9505,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "108d8312-c2d0-4e20-b201-015bd491c8e9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Garage\\garage.cy.js",
+      "file": "cypress\\e2e\\Garage\\garage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7ac3283b-25de-4ab5-9a66-76368627b5ed",
+          "title": "Garage and Fuel Expenses UI tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should add a car and add fuel expense",
+              "fullTitle": "Garage and Fuel Expenses UI tests Should add a car and add fuel expense",
+              "timedOut": null,
+              "duration": 9440,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Add car\n_garagePage.default.addCar({\n  brand: 'Audi',\n  model: 'A4',\n  mileage: '1000'\n});\ncy.contains('Audi').should('be.visible');\n// Go to Expenses\ncy.contains('Fuel expenses').click();\n// Add expense\n_expensesPage.default.addExpense({\n  liters: '20',\n  cost: '1200'\n});\ncy.contains('1200').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `select[name=\"brand\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `select[name=\"brand\"]`, but never found it.\n    at get brandSelect (webpack://js-cypress/./cypress/pages/garagePage.js:7:16)\n    at GaragePage.addCar (webpack://js-cypress/./cypress/pages/garagePage.js:24:11)\n    at Context.eval (webpack://js-cypress/./cypress/e2e/Garage/garage.cy.js:13:15)",
+                "diff": null
+              },
+              "uuid": "a417256d-d000-40c6-822b-5d0147c1a6e9",
+              "parentUUID": "7ac3283b-25de-4ab5-9a66-76368627b5ed",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a417256d-d000-40c6-822b-5d0147c1a6e9"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9440,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/qauto",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

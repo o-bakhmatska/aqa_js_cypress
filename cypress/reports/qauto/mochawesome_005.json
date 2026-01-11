@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-12-14T18:45:07.572Z",
+    "end": "2025-12-14T18:45:13.207Z",
+    "duration": 5635,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e59e69f3-db62-47bf-b822-bcd5e6ae4c51",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Registration\\register_positive_tests.cy.js",
+      "file": "cypress\\e2e\\Registration\\register_positive_tests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bea0598e-c8c6-4101-b892-0d1efafd71c2",
+          "title": "Registration positive tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should successfully register a new user",
+              "fullTitle": "Registration positive tests Should successfully register a new user",
+              "timedOut": null,
+              "duration": 5587,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const uniqueEmail = `user_${Date.now()}@test.com`;\n_registrationModal.default.fillForm({\n  name: 'Anna',\n  lastName: 'Lee',\n  email: uniqueEmail,\n  password: 'Password1',\n  repeatPassword: 'Password1'\n});\n_registrationModal.default.registerButton.should('not.be.disabled').click();\n_registrationModal.default.modal.should('not.exist');\ncy.url().should('include', '/garage');",
+              "err": {},
+              "uuid": "5ccaa93b-86fb-4d2f-a04c-17f80fb543c3",
+              "parentUUID": "bea0598e-c8c6-4101-b892-0d1efafd71c2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5ccaa93b-86fb-4d2f-a04c-17f80fb543c3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5587,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/qauto",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
